@@ -1,10 +1,11 @@
 require 'sinatra'
+require "sinatra/activerecord"
+require 'slim'
 
-get '/' do
-  slim :index
+class User < ActiveRecord::Base
 end
 
-get '/hello/:name' do |name|
-  @the_name = name
-  slim :hello
+get '/' do
+  @users = User.all
+  slim :index
 end
