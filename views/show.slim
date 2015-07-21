@@ -1,0 +1,21 @@
+h1 Utilisateur
+
+p = @user.name
+
+h1 Modification
+
+form action="/users/#{@user.id}" method="post"
+  input type="hidden" name="_method" value="patch"
+  input name="name" placeholder="Nom" value="#{@user.name}"
+  input type="submit" value="Modifier"
+
+h1 Suppression
+
+form action="/users/#{@user.id}" method="post"
+  input type="hidden" name="_method" value="delete"
+  input type="submit" value="Supprimer"
+
+h1 Retour
+
+p
+  a href="/users" Liste des utilisateurs
