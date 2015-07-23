@@ -7,3 +7,4 @@ gem "sqlite3"
 gem "rake"
 
 gem "slim"
+gem "require_all"
