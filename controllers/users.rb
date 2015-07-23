@@ -1,6 +1,6 @@
 get "/users" do
   @users = User.all
-  slim :index
+  slim :"users/index"
 end
 
 post "/users" do
@@ -10,7 +10,7 @@ end
 
 get "/users/:id" do
   @user = User.find(params[:id])
-  slim :show
+  slim :"users/show"
 end
 
 patch "/users/:id" do
